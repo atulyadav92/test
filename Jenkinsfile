@@ -8,7 +8,7 @@ pipeline {
 			cd lambda
 			echo ${BUILD_NUMBER}
 			pip3 install requests -t .
-			zip lambda_function${BUILD_NUMBER}.zip .
+			zip -r lambda_function${BUILD_NUMBER}.zip .
             		echo ${region}
 			/usr/local/bin/aws cp lambda_function${BUILD_NUMBER}.zip s3://mygreenbucket/
 			whoami
