@@ -10,7 +10,7 @@ pipeline {
 			zip lambda_function.zip lambda_function.py
             		echo ${region}
 			whoami
-            		aws s3 ls
+            		/usr/local/bin/aws s3 ls
 		'''
             }
         }
