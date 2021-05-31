@@ -17,7 +17,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 sh '''
-			aws lambda --region ${region} update-function-code --function-name Test01 --zip-file fileb://lambda.zip
+			/usr/local/bin/aws lambda --region ${region} update-function-code --function-name Test01 --zip-file fileb://lambda.zip
 		'''
             }
         }
