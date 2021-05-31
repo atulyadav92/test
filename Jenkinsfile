@@ -9,6 +9,7 @@ pipeline {
 			pip3 install requests -t .
 			zip lambda_function.zip lambda_function.py
             echo ${region}
+            aws s3 ls
 		'''
             }
         }
