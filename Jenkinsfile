@@ -4,9 +4,9 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh '''
-			
-		'''
+                    echo "HELLO"
+		    echo "${BUILD_NUMBER}"
+		    echo "${TAG}" 
             }
         }
         stage('Deploy') {
