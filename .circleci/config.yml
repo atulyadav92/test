@@ -10,7 +10,7 @@ jobs:
           command: |
             echo Hello
             last_tag=$(git describe --tags | grep -o '^[^-]\+')
-            echo "${CIRCLE_BRANCH}"
+            echo "${TEST}"
             echo "${last_tag}"
 workflows:
   build-workflow:
