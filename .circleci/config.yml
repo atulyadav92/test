@@ -17,8 +17,9 @@ jobs:
           name: "Say hello"
           command: |
             echo Hello
+            last_tag=$(git describe --tags | grep -o '^[^-]\+')
             echo "${CIRCLE_BRANCH}"
-            echo "${CIRCLE_BRANCH}"
+            echo "${last_tag}"
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
