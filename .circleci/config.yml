@@ -1,17 +1,30 @@
 version: 2.1
+commands:
+  provision-k8s:
+    parameters:
+      tag:
+        type: string
+        default: tag
+    steps:
+      - run:
+          name: Provision VPC and EKS cluster
+          command: |
+            last_tag=$(git describe --tags | grep -o '^[^-]\+')
+            last_tag=$( echo "${last_tag}" | sed 's/v.//g' )
 jobs:
   say-hello:
     docker:
       - image: 'cimg/base:stable'
+    parameters: # parameters are at the job level
+      tag:
+        type: string
+        default: tag
     steps:
       - checkout
       - run:
           name: Say hello
           command: |
-            echo Hello
-            last_tag=$(git describe --tags | grep -o '^[^-]\+')
-            echo "${TEST}"
-            echo "${last_tag}"
+            echo parameters.tag
 workflows:
   build-workflow:
     jobs:
