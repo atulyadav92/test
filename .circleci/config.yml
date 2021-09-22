@@ -24,7 +24,7 @@ jobs:
       - run:
           name: Say hello
           command: |
-            echo << parameters.customer >>
+            echo << parameters.tag >>
 workflows:
   build-workflow:
     jobs:
