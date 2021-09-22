@@ -13,11 +13,11 @@ jobs:
             echo "${CIRCLE_BRANCH}"
             echo "${last_tag}"
 workflows:
-  build-workflow: null
+  build-workflow:
+    filters:
+      branches:
+        ignore: /.*/
+      tags:
+        only: '/^v[0-9]+(\.[0-9]+)*$/'
   jobs:
-    - say-hello:
-        filters:
-          branches:
-            ignore: /.*/
-          tags:
-            only: '/^v[0-9]+(\.[0-9]+)*$/'
+    - say-hello
