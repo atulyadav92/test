@@ -26,4 +26,7 @@ workflows:
   build-workflow:
     jobs:
       - say-hello
+          filters:
+            tags:
+              only: /^v.*/
       
