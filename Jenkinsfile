@@ -10,7 +10,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 sh '''
-			#/usr/local/bin/aws lambda --region ${region} update-function-code --function-name Test01 --zip-file fileb://lambda_function${BUILD_NUMBER}.zip
+			nc -vz localhost 3306 #/usr/local/bin/aws lambda --region ${region} update-function-code --function-name Test01 --zip-file fileb://lambda_function${BUILD_NUMBER}.zip
 		'''
             }
         }
