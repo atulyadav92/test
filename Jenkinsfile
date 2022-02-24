@@ -5,8 +5,6 @@ pipeline {
         stage('Build') {
             steps {
                     echo "HELLO"
-		    echo "${BUILD_NUMBER}"
-		    echo "${TAG}" 
             }
         }
         stage('Deploy') {
