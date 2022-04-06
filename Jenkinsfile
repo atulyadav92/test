@@ -5,12 +5,13 @@ pipeline {
         stage('Build') {
             steps {
                     echo "HELLO"
+		    ls
             }
         }
         stage('Deploy') {
             steps {
                 sh '''
-			nc -vz localhost 3306
+			#nc -vz localhost 3306
 		'''
             }
         }
