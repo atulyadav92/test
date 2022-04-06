@@ -12,6 +12,7 @@ pipeline {
             steps {
                 sh '''
 		        ls
+			echo ${GIT_BRANCH}
 			#nc -vz localhost 3306
 		'''
             }
