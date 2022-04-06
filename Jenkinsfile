@@ -1,23 +1,20 @@
-
 pipeline {
     agent any
 
     stages {
         stage('Build') {
             steps {
-          
-		    echo "${BUILD_NUMBER}"
-		    echo "${TAG}" 
+                    echo "HELLO"
+		    
             }
         }
         stage('Deploy') {
             steps {
                 sh '''
-			ls
-			
+		        ls
+			#nc -vz localhost 3306
 		'''
             }
         }
     }
 }
-
